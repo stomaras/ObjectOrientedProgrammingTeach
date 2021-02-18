@@ -15,6 +15,7 @@ public class Main {
     // When adding or updating be sure to check if the contact already exists. (use name)
     // Be sure not to expose the inner workings of the ArrayList to MobilePhone(e.g not ints, no.get(i) e.t.c)
     // MobilePhone should do everything with Contact objects only.
-    //
+
+
     }
 }
