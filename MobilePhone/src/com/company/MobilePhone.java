@@ -75,6 +75,15 @@ public class MobilePhone {
         return null;
     }
 
+    public Contact queryContact(String name) {
+        int position = findContact(name);
+        if (position >= 0) {
+            return this.contacts.get(position);
+        }
+
+        return null;
+    }
+
     public void printContacts() {
         System.out.println("Contact List");
         for (int i=0; i<contacts.size(); i++) {
