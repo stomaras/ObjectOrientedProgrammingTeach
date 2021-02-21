@@ -38,6 +38,17 @@ public class MobilePhone {
         return true;
     }
 
+    public boolean removeContact(Contact contact) {
+        int foundPosition = findContact(contact);
+        if (foundPosition < 0) {
+            System.out.println(contact.getName() + " was not found. ");
+            return false;
+        }
+        this.contacts.remove(foundPosition);
+        System.out.println(contact.getName() + ", was deleted.");
+        return true;
+    }
+
     // Now we are going to implement two find contact methods.In other words we are going to
     // overload one of the methods. We are going to have one that returns the index position
     // and we will neeed that so we can actually edit that within the ArrayList.
@@ -56,5 +67,23 @@ public class MobilePhone {
         }
         return -1;
     }
+
+    public String queryContact(Contact contact) {
+        if (findContact(contact) >= 0) {
+            return contact.getName();
+        }
+        return null;
+    }
+
+    public void printContacts() {
+        System.out.println("Contact List");
+        for (int i=0; i<contacts.size(); i++) {
+            System.out.println((i+1) + "." +
+                        this.contacts.get(i).getName() + "->" +
+                        this.contacts.get(i).getPhoneNumber());
+        }
+    }
+
+
 
 }
