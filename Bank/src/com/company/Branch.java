@@ -6,7 +6,7 @@ public class Branch {
 
     // It has two fields. A String called name and an ArrayList that holds objects of type Customer called customers
     private String name;
-    private ArrayList<Customer> customers = new ArrayList<Customer>();
+    private ArrayList<Customer> customers ;
 
     // A constructor that takes a String (name of branch). It initialises name and instantiates customers
     public Branch(String name) {
