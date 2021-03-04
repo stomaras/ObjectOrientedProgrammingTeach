@@ -30,40 +30,35 @@ public class Branch {
 
     public boolean newCustomer(String customerName, double initialTransaction) {
 
-        for (int i = 0; i < this.customers.size(); i++) {
-            if (findCustomer(customerName) == null){
-                return false;
-            }
+        if (findCustomer(customerName) == null) {
+            this.customers.add(new Customer(customerName, initialTransaction));
+            return true;
         }
-        Customer customer = new Customer(customerName);
-        this.customers.add(customer);
-        customer.addTransaction(initialTransaction);
-        return true;
+
+        return false;
     }
 
     // addCustomerTransaction(), has two parameters of type String (name of customer),
     // double(transaction) and returns true if the customers transaction was added successfully or false otherwise
 
     public boolean addCustomerTransaction(String customerName, double transaction) {
-        for (int i = 0; i < this.customers.size(); i++) {
-            if (findCustomer(customerName) == null) {
-                return false;
-            }
+        Customer existingCustomer = findCustomer(customerName);
+        if (existingCustomer != null) {
+            existingCustomer.addTransaction(transaction);
+            return true;
         }
-        Customer newCustomer = new Customer(customerName);
-        newCustomer.addTransaction(transaction);
-        return true;
-
+        return false;
     }
 
     private Customer findCustomer(String customerName) {
         for (int i = 0; i < customers.size(); i++) {
-            if (customers.get(i).getName().equals(customerName)){
-                Customer newCustomer = new Customer(customerName);
-                return newCustomer;
+            Customer checkedCustomer = this.customers.get(i);
+            if (checkedCustomer.getName().equals(customerName)){
+                return checkedCustomer;
             }
         }
         return null;
     }
+
 
 }

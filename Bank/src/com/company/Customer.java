@@ -11,9 +11,10 @@ public class Customer {
     // instantiates transactions.
 
 
-    public Customer(String name) {
+    public Customer(String name, double initialAmount) {
         this.name = name;
         this.transactions = new ArrayList<Double>();
+        addTransaction(initialAmount);
     }
 
     // And three methods, they are (their functions are in their names):
