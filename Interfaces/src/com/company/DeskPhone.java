@@ -1,6 +1,6 @@
 package com.company;
 
-public class DeskPhone implements ITelephopne {
+public class DeskPhone implements ITelephone {
 
     private int myNumber;
     private boolean isRinging;
