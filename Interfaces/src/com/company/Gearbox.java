@@ -1,10 +1,9 @@
 package com.company;
 
 public class Gearbox {
+     private boolean clutchIsIn;
 
-    private boolean clutchIsIn;
-
-    public void operateClutch(boolean inOrOut) {
-        this.clutchIsIn = inOrOut;
-    }
+     public void operateClutch(boolean inOrOut) {
+         this.clutchIsIn = inOrOut;
+     }
 }
