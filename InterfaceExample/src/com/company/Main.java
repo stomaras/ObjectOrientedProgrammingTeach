@@ -1,5 +1,10 @@
 package com.company;
 
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -9,7 +14,7 @@ public class Main {
     // Implement the following:
 
 
-        
+
     // 1. ISaveable (interface)
     // it has two methods :
     // write(): takes no argument and returns a List containing object of type String.
@@ -40,6 +45,65 @@ public class Main {
     // Make sure the List() is not null and the size() is greater than 0 before storing the values.
     // toString(), Monsters overriding toString() method. It takes no arguments and returns a String in the following format:
     // Monster{name='Werewolf', hitPoints=20, strength=40}
+        Player tim = new Player("Tim", 10, 15);
+        System.out.println(tim.toString());
+        saveObject(tim);
+        tim.setHitPoints(8);
+        System.out.println(tim);
+        saveObject(tim);
+        loadObject(tim);
+        System.out.println(tim);
+
+
+
 
     }
+
+    public static ArrayList<String> readValues() {
+        ArrayList<String> values = new ArrayList<String>();
+        Scanner scanner = new Scanner(System.in);
+        boolean quit = false;
+        int index = 0;
+        System.out.println("Choose\n" +
+                "1 to enter a string\n" +
+                "0 to quit");
+
+        while (!quit) {
+            System.out.println("Choose an option: ");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+            switch (choice) {
+                case 0:
+                    quit = true;
+                    break;
+                case 1:
+                    System.out.println("Enter a string: ");
+                    String stringInput = scanner.nextLine();
+                    values.add(index, stringInput);
+                    index++;
+                    break;
+            }
+        }
+        return values;
+    }
+
+
+    // .write() returns a list
+    // this method can be used by any class that implements ISaveable Interface
+    public static void saveObject(ISaveable objectToSave) {
+        for (int i = 0; i< objectToSave.write().size(); i++) {
+            System.out.println(" Saving " + objectToSave.write().get(i) + " to storage device ");
+        }
+    }
+
+
+    // save objects
+    public static void loadObject(ISaveable objectToLoad) {
+        ArrayList<String> values = readValues();
+        objectToLoad.read(values);
+    }
+
+
+
+
 }
