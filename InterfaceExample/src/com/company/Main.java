@@ -45,15 +45,24 @@ public class Main {
     // Make sure the List() is not null and the size() is greater than 0 before storing the values.
     // toString(), Monsters overriding toString() method. It takes no arguments and returns a String in the following format:
     // Monster{name='Werewolf', hitPoints=20, strength=40}
+
+    // There are obvious advantages to this ISaveable interface, in that we are guaranteeing what's a contract to confirm
+    // that if a class is implementing this interface, it has to implement that code.
+    //
         Player tim = new Player("Tim", 10, 15);
         System.out.println(tim.toString());
         saveObject(tim);
         tim.setHitPoints(8);
         System.out.println(tim);
         saveObject(tim);
-        loadObject(tim);
+        //loadObject(tim);
         System.out.println(tim);
-
+        System.out.println("\n");
+        ISaveable werewolf = new Monster("Werewolf", 20, 40);
+        // We actually casting this. What we do is , we say that this base class will use the ISaveable interface
+        System.out.println("Strength is : " + ((Monster) werewolf).getStrength());
+        System.out.println(werewolf);
+        saveObject(werewolf);
 
 
 
