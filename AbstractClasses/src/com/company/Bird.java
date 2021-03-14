@@ -1,6 +1,6 @@
 package com.company;
 
-public abstract class Bird extends Animal{
+public abstract class Bird extends Animal implements ICanFly{
 
     public Bird(String name) {
         super(name);
@@ -23,5 +23,9 @@ public abstract class Bird extends Animal{
     // Note !!! : You can't directly instantiate a class that is abstract in anyway. So what we need to do is actually create
                     // another class. so to do that , we will change this, and we will actually create a Parrot class.
 
-    public abstract void fly();
+
+    @Override
+    public void fly() {
+        System.out.println(getName() + " is flapping its wings ");
+    }
 }

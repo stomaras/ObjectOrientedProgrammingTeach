@@ -11,8 +11,5 @@ public class Parrot extends Bird{
     // could overriden and the other methods.
 
 
-    @Override
-    public void fly() {
-        System.out.println(" Fleeting from branch to branch ");
-    }
+
 }
