@@ -23,5 +23,24 @@ public class Main {
         // 7. Accesibility of Data Members: Members of a java interface are public by default. A java abstract class can have
            // class members like private, protected, e.t.c, e.t.c.
 
+        Dog dog = new Dog("Tomy");
+        dog.breathe();
+        dog.eat();
+        System.out.println("#######################################################################");
+
+
+        // NOTE !!!
+        // Now birds can also fly, so it could be a good idea to add a fly method to our bird class. But not all birds can fly,
+        // So implementing a fly method in the bird class is not a good idea. Better idea would be to create an abstract Bird class that extends Animal,
+        // and also have an abstract fly method that individual Burd Objects can implement as they are able to.
+
+        Parrot parrot = new Parrot("Australian ringneck");
+        parrot.breathe();
+        parrot.eat();
+        parrot.fly();
+
+        Penguin penguin = new Penguin("Emperror");
+        penguin.fly();
+
     }
 }
