@@ -9,6 +9,7 @@ public class Main {
         SoccerPlayer beckam = new SoccerPlayer("Beckam");
 
         // This particular instance is gonna acceept only football players
+        // We could extend Team class to include 3 different type of classes or in this case we can use generic classes.
         Team<FootballPlayer> adelaideCrows = new Team<>("Adelaide Crows");
         adelaideCrows.addPlayer(joe);
         Team<BaseballPlayer> baseballTeam = new Team<>("Chicago Cubs");
@@ -28,5 +29,13 @@ public class Main {
         // a soccer team are three different classes and ensure that they only accept the correct player type. So in this case this will be
         // duplicating code and it's usually never an efficient way to code to actually duplicate codes so i do not recommend that.
         //
+        System.out.println("Rankings");
+        System.out.println(adelaideCrows.getName() + ": " + adelaideCrows.ranking());
+        System.out.println(hawthorn.getName() + ": " + hawthorn.ranking());
+        System.out.println(fremantle.getName() + ": " + fremantle.ranking());
+
+        System.out.println(adelaideCrows.compareTo(hawthorn));
+        System.out.println(adelaideCrows.compareTo(fremantle));
+        System.out.println(fremantle.compareTo(adelaideCrows));
     }
 }

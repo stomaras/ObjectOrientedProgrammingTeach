@@ -1,8 +1,9 @@
 package com.company;
 
 import java.util.ArrayList;
-
-public class Team<T> {
+// We have created the ability to have generic types, such as team football player
+// Many of the java classes implement this compareTo() method including the string and integer classes.
+public class Team<T extends Player> implements Comparable<Team<T>> {
 
     private String name;
     int played = 0;
@@ -64,5 +65,18 @@ public class Team<T> {
         return (won * 2) + tied;
     }
 
+    @Override
+    public int compareTo(Team<T> team) {
+        // if the current object we are comparing, if it is greater than what's been passed to us, the team dot ranking
+        // then we return -1. So in other words the current team, the one that we are actually in, this class in other words,
+        // or the instantiation of the class, If this team is higher than the team we passed to this method we return -1.
+        if (this.ranking() > team.ranking()) {
+            return -1;
+        } else if (this.ranking() < team.ranking()) {
+            return 1;
+        } else {
+            return 0;
+        }
 
+    }
 }
