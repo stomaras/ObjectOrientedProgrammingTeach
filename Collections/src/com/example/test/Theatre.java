@@ -32,7 +32,6 @@ public class Theatre {
         return theatreName;
     }
 
-
     public void getSeats() {
         for (Seat seat : seats) {
             System.out.println(seat.getSeatNumber());
@@ -50,6 +49,7 @@ public class Theatre {
             }
         }
 
+        // in case has been an invalid seat sentence method.
         if (requestedSeat == null) {
             System.out.println(" There is no seat " + seatNumber);
             return false;
@@ -62,6 +62,8 @@ public class Theatre {
     // Class Seat which has the ability to reserve or cancel a particular seat.
     private class Seat {
         private final String seatNumber;
+        // So i am gonna save in one to indicate whether this particular seat
+        // has been reserved or not.
         private boolean reserved = false;
 
         public Seat(String seatNumber) {
@@ -78,6 +80,8 @@ public class Theatre {
                 System.out.println("Seat " + seatNumber + " reserved");
                 return true;
             } else {
+                // because obviously there was a problem reserving it because it was
+                // already reserved.
                 return false;
             }
         }

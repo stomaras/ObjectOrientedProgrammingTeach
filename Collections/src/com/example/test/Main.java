@@ -14,7 +14,7 @@ public class Main {
         // represent collections, including this list interface that we have already seen and we will be looking at the interface hierarchy of the collections framework
         // Now the Java JDK provides a range of polymorphic algorithms that work on collections objects.
         Theatre theatre = new Theatre("Olympian", 8, 12);
-        theatre.getSeats();
+        //theatre.getSeats();
         if (theatre.reserveSeat("H11")) {
             System.out.println(" Please Pay ");
         } else {
