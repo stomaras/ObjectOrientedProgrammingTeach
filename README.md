@@ -71,3 +71,16 @@ A List is an ordered Collection of elements which may contain duplicates. It is 
   Object clone()                                  Return a shallow copy of an ArrayList
   Object[] toArray()                              Returns an array containing all the elements in the list
   void trimToSize()                               Trims the capacity of this ArrayList instance to be the list's current size.
+  
+# Vectors
+
+  Vectors are similar to arrays, where the elements of the vector object can be accessed via an index into the vector. Vector             implements a dynamic array. Also, the vector is not limited to a specific size, it can shrink or grow automatically whenever
+  required. It is similar to ArrayList, but with two differences:
+     - Vector is synchronized.
+     - Vector contains many legacy methods that are not part of the collections framework.
+     
+  Syntax:
+  
+  Vector object = new Vector(size, increment);
+  
+  
