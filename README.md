@@ -83,4 +83,27 @@ A List is an ordered Collection of elements which may contain duplicates. It is 
   
   Vector object = new Vector(size, increment);
   
-  
+# ArrayList vs LinkedList
+          Search: ArrayList search operation is pretty fast compared to the LinkedList search operation. get(int index) in ArrayList             gives the performance of O(1) while LinkedList performance is O(n).
+
+          Reason: ArrayList maintains index based system for its elements as it uses array data structure implicitly which makes it                       faster for searching an element in the list. On the other side LinkedList implements doubly linked list which                           requires the traversal through all the elements for searching an element.
+          
+          2) Deletion: LinkedList remove operation gives O(1) performance while ArrayList gives variable performance: O(n) in worst                            case (while removing first element) and O(1) in best case (While removing last element).
+
+          Conclusion: LinkedList element deletion is faster compared to ArrayList.
+          
+          3) Inserts Performance: LinkedList add method gives O(1) performance while ArrayList gives O(n) in worst case. Reason is same                                   as explained for remove.
+          4) Memory Overhead: ArrayList maintains indexes and element data while LinkedList maintains element data and two pointers for                               neighbor nodes hence the memory consumption is high in LinkedList comparatively.
+          
+          
+     There are few similarities between these classes which are as follows:
+          
+          1)Both ArrayList and LinkedList are implementation of List interface.
+          2)They both maintain the elements insertion order which means while displaying ArrayList and LinkedList elements the result               set would be having the same order in which the elements got inserted into the List.
+          3)Both these classes are non-synchronized and can be made synchronized explicitly by using Collections.synchronizedList                   method.
+          4)The iterator and listIterator returned by these classes are fail-fast (if list is structurally modified at any time after               the iterator is created, in any way except through the iterator’s own remove or add methods, the iterator will throw a                 ConcurrentModificationException).
+ 
+ # When to use LinkedList and when to use ArrayList?
+ 
+          1) As explained above the insert and remove operations give good performance (O(1)) in LinkedList compared to                              ArrayList(O(n)). Hence if there is a requirement of frequent addition and deletion in application then LinkedList is a                  best choice.
+          2) Search (get method) operations are fast in Arraylist (O(1)) but not in LinkedList (O(n)) so If there are less add and                  remove operations and more search operations requirement, ArrayList would be your best bet.
